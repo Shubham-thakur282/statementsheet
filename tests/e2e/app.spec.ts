@@ -211,8 +211,10 @@ test.describe('content pages', () => {
       const hrefs = await page.locator('a[href^="/"]').evaluateAll((as) => as.map((a) => (a as HTMLAnchorElement).getAttribute('href')!.split('#')[0]));
       for (const h of hrefs) if (h && !seen.has(h)) queue.push(h);
     }
-    for (const asset of ['./sitemap.xml', './robots.txt', './favicon.svg', './og.png', './pdfjs/standard_fonts/FoxitSans.pfb']) expect((await request.get(asset)).status(), asset).toBe(200);
+    for (const asset of ['./sitemap.xml', './robots.txt', './favicon.svg', './og.png', './pdfjs/standard_fonts/LiberationSans-Regular.ttf', './pdfjs/cmaps/78-H.bcmap']) expect((await request.get(asset)).status(), asset).toBe(200);
     expect(seen.size).toBeGreaterThanOrEqual(14);
+    // Guard: the server must really 404 missing files, otherwise this check proves nothing.
+    expect((await request.get('./definitely-missing-page/')).status()).toBe(404);
   });
 
   test('SEO landing page embeds a working converter', async ({ page }) => {

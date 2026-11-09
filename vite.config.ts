@@ -17,6 +17,8 @@ function htmlInputs(dir: string, acc: Record<string, string> = {}): Record<strin
 
 export default defineConfig(() => ({
   root: siteDir,
+  // Multi-page site: unknown paths must 404 (no SPA fallback), so link checks are meaningful.
+  appType: 'mpa',
   base: (process.env.SITE_BASE || '/').replace(/\/?$/, '/'),
   envDir: import.meta.dirname,
   publicDir: resolve(import.meta.dirname, 'public'),
