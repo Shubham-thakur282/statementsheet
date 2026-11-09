@@ -1,0 +1,146 @@
+[
+  {
+    "date": "2025-01-02",
+    "description": "ACH DEPOSIT ACME PAYROLL PPD ID 9876543210",
+    "amount": 3120.55,
+    "balance": 5570.55
+  },
+  {
+    "date": "2025-01-03",
+    "description": "DEBIT CARD PURCHASE COFFEE HOUSE SEATTLE WA",
+    "amount": -6.75,
+    "balance": 5563.8
+  },
+  {
+    "date": "2025-01-05",
+    "description": "ONLINE TRANSFER TO SAVINGS",
+    "amount": -500,
+    "balance": 5063.8
+  },
+  {
+    "date": "2025-01-07",
+    "description": "CHECK #1042",
+    "amount": -1250,
+    "balance": 3813.8
+  },
+  {
+    "date": "2025-01-09",
+    "description": "ELECTRIC UTILITY AUTOPAY",
+    "amount": -142.18,
+    "balance": 3671.62
+  },
+  {
+    "date": "2025-01-10",
+    "description": "ZELLE FROM J SMITH",
+    "amount": 75,
+    "balance": 3746.62
+  },
+  {
+    "date": "2025-01-12",
+    "description": "GROCERY MARKET #221",
+    "amount": -89.43,
+    "balance": 3657.19
+  },
+  {
+    "date": "2025-01-14",
+    "description": "GAS STATION 4410",
+    "amount": -41.02,
+    "balance": 3616.17
+  },
+  {
+    "date": "2025-01-15",
+    "description": "ACH DEPOSIT ACME PAYROLL",
+    "amount": 3120.55,
+    "balance": 6736.72
+  },
+  {
+    "date": "2025-01-16",
+    "description": "RENT PAYMENT OAK STREET APTS",
+    "amount": -1850,
+    "balance": 4886.72
+  },
+  {
+    "date": "2025-01-18",
+    "description": "STREAMING SVC",
+    "amount": -15.99,
+    "balance": 4870.73
+  },
+  {
+    "date": "2025-01-19",
+    "description": "ATM WITHDRAWAL 123 MAIN ST",
+    "amount": -100,
+    "balance": 4770.73
+  },
+  {
+    "date": "2025-01-20",
+    "description": "PHARMACY 0098",
+    "amount": -23.5,
+    "balance": 4747.23
+  },
+  {
+    "date": "2025-01-21",
+    "description": "INTEREST PAYMENT",
+    "amount": 0.42,
+    "balance": 4747.65
+  },
+  {
+    "date": "2025-01-22",
+    "description": "RESTAURANT BILL",
+    "amount": -64.8,
+    "balance": 4682.85
+  },
+  {
+    "date": "2025-01-23",
+    "description": "PHONE CARRIER",
+    "amount": -70,
+    "balance": 4612.85
+  },
+  {
+    "date": "2025-01-24",
+    "description": "REFUND ONLINE STORE",
+    "amount": 34.99,
+    "balance": 4647.84
+  },
+  {
+    "date": "2025-01-25",
+    "description": "INSURANCE PREMIUM",
+    "amount": -210.33,
+    "balance": 4437.51
+  },
+  {
+    "date": "2025-01-26",
+    "description": "GROCERY MARKET #221",
+    "amount": -120.07,
+    "balance": 4317.44
+  },
+  {
+    "date": "2025-01-27",
+    "description": "GYM MEMBERSHIP",
+    "amount": -39.99,
+    "balance": 4277.45
+  },
+  {
+    "date": "2025-01-28",
+    "description": "BOOKSTORE",
+    "amount": -18.25,
+    "balance": 4259.2
+  },
+  {
+    "date": "2025-01-29",
+    "description": "TRANSFER FROM SAVINGS",
+    "amount": 300,
+    "balance": 4559.2
+  },
+  {
+    "date": "2025-01-30",
+    "description": "WATER UTILITY",
+    "amount": -48.6,
+    "balance": 4510.6
+  },
+  {
+    "date": "2025-01-31",
+    "description": "MONTHLY SERVICE FEE",
+    "amount": -12,
+    "balance": 4498.6
+  }
+]

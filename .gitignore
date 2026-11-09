@@ -1,0 +1,14 @@
+node_modules
+dist
+site
+public/pdfjs
+public/sitemap.xml
+public/robots.txt
+.env
+.env.*
+!.env.example
+test-results
+playwright-report
+coverage
+*.log
+dist-e2e

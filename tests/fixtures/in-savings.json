@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2025-04-01",
+    "description": "UPI-SWIGGY-PAYTM",
+    "amount": -450,
+    "balance": 124550
+  },
+  {
+    "date": "2025-04-03",
+    "description": "NEFT CR-ACME TECH PVT LTD-SALARY",
+    "amount": 185000,
+    "balance": 309550
+  },
+  {
+    "date": "2025-04-05",
+    "description": "ATW-ATM CASH WDL",
+    "amount": -10000,
+    "balance": 299550
+  },
+  {
+    "date": "2025-04-07",
+    "description": "UPI-ELECTRICITY BOARD",
+    "amount": -2340.5,
+    "balance": 297209.5
+  },
+  {
+    "date": "2025-04-13",
+    "description": "IMPS-RENT-LANDLORD",
+    "amount": -32000,
+    "balance": 265209.5
+  },
+  {
+    "date": "2025-04-15",
+    "description": "SIP MUTUAL FUND",
+    "amount": -15000,
+    "balance": 250209.5
+  },
+  {
+    "date": "2025-04-18",
+    "description": "INT.PD:XXXX4821",
+    "amount": 812.33,
+    "balance": 251021.83
+  },
+  {
+    "date": "2025-04-21",
+    "description": "POS AMAZON PAY INDIA",
+    "amount": -1299,
+    "balance": 249722.83
+  },
+  {
+    "date": "2025-04-25",
+    "description": "UPI-FRIEND-SPLIT",
+    "amount": 1500,
+    "balance": 251222.83
+  },
+  {
+    "date": "2025-04-28",
+    "description": "EMI HOME LOAN",
+    "amount": -48250,
+    "balance": 202972.83
+  }
+]

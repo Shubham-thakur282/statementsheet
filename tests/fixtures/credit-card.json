@@ -1,0 +1,27 @@
+[
+  {
+    "date": "2024-12-28",
+    "description": "AIRLINE TICKETS",
+    "amount": -412.6
+  },
+  {
+    "date": "2024-12-30",
+    "description": "HOTEL BOOKING",
+    "amount": -289
+  },
+  {
+    "date": "2025-01-02",
+    "description": "PAYMENT THANK YOU",
+    "amount": 800
+  },
+  {
+    "date": "2025-01-04",
+    "description": "GROCERY MARKET",
+    "amount": -54.12
+  },
+  {
+    "date": "2025-01-08",
+    "description": "SOFTWARE SUBSCRIPTION",
+    "amount": -12
+  }
+]

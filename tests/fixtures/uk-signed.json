@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2025-02-03",
+    "description": "CARD PAYMENT TO TESCO STORES",
+    "amount": -45.2,
+    "balance": 1475.2
+  },
+  {
+    "date": "2025-02-04",
+    "description": "DIRECT DEBIT COUNCIL TAX",
+    "amount": -158,
+    "balance": 1317.2
+  },
+  {
+    "date": "2025-02-06",
+    "description": "FASTER PAYMENT RECEIVED J DOE",
+    "amount": 250,
+    "balance": 1567.2
+  },
+  {
+    "date": "2025-02-10",
+    "description": "STANDING ORDER SAVINGS POT",
+    "amount": -300,
+    "balance": 1267.2
+  },
+  {
+    "date": "2025-02-14",
+    "description": "SALARY WIDGET LTD",
+    "amount": 2400,
+    "balance": 3667.2
+  },
+  {
+    "date": "2025-02-17",
+    "description": "CARD PAYMENT TO TRAINLINE",
+    "amount": -62.35,
+    "balance": 3604.85
+  },
+  {
+    "date": "2025-02-21",
+    "description": "DIRECT DEBIT MOBILE",
+    "amount": -18,
+    "balance": 3586.85
+  },
+  {
+    "date": "2025-02-27",
+    "description": "CASH WITHDRAWAL",
+    "amount": -1200,
+    "balance": 2386.85
+  }
+]
