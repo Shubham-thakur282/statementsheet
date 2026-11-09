@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @source "../site";
+@source "../src";
 
 :root {
   color-scheme: light;

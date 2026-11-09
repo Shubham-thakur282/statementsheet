@@ -27,6 +27,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
+    "muhammara": "^6.0.6",
     "oxlint": "^1.90.0",
     "pdf-lib": "^1.17.1",
     "tailwindcss": "^4.3.5",
