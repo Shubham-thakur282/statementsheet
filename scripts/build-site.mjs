@@ -81,7 +81,7 @@ ${GC ? `<script data-goatcounter="https://${GC}.goatcounter.com/count" async src
 <header class="border-b border-slate-200 bg-white/90 backdrop-blur">
   <nav class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3" aria-label="Main">
     <a href="${link('')}" class="flex items-center gap-2 font-bold text-slate-900">
-      <span aria-hidden="true" class="grid h-7 w-7 place-items-center rounded-lg bg-emerald-600 text-sm text-white">⇄</span>${BRAND}
+      <span aria-hidden="true" class="grid h-7 w-7 place-items-center rounded-lg bg-emerald-700 text-sm text-white">⇄</span>${BRAND}
     </a>
     <div class="flex items-center gap-1 sm:gap-4 text-sm">
       ${navLinks.map(([s, l], i) => `<a href="${link(s)}" class="${i < 2 ? 'hidden md:inline ' : ''}rounded px-2 py-1 text-slate-700 hover:text-emerald-700">${l}</a>`).join('')}
@@ -174,7 +174,7 @@ const homeExtra = `
       ['Drop your PDF', 'Any digital statement from online banking. Password-protected PDFs are fine.'],
       ['Review the table', 'Columns are rebuilt from the page layout and checked against the balance. Click any cell to edit.'],
       ['Download', 'CSV, Excel, OFX or QIF, ready for Excel, Google Sheets, QuickBooks or Xero.'],
-    ].map(([t, d], i) => `<li class="rounded-2xl bg-white p-6 border border-slate-200"><div class="grid h-8 w-8 place-items-center rounded-full bg-emerald-600 font-bold text-white">${i + 1}</div><h3 class="mt-3 font-semibold">${t}</h3><p class="mt-1 text-slate-600">${d}</p></li>`).join('')}
+    ].map(([t, d], i) => `<li class="rounded-2xl bg-white p-6 border border-slate-200"><div class="grid h-8 w-8 place-items-center rounded-full bg-emerald-700 font-bold text-white">${i + 1}</div><h3 class="mt-3 font-semibold">${t}</h3><p class="mt-1 text-slate-600">${d}</p></li>`).join('')}
   </ol>
 </section>
 <section class="mx-auto max-w-6xl px-4 pt-20" aria-labelledby="who">
@@ -199,7 +199,7 @@ function pricingCards() {
     <div class="rounded-2xl border-2 border-emerald-600 bg-white p-6 shadow-sm">
       <h3 class="font-semibold">Pro yearly <span class="ml-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs text-emerald-800">Save 36%</span></h3><p class="mt-2 text-3xl font-bold">$69<span class="text-base font-normal text-slate-500">/year</span></p>
       <ul class="mt-4 space-y-2 text-sm text-slate-700"><li>✓ Unlimited statements &amp; pages</li><li>✓ Excel, OFX (QuickBooks/Xero), QIF</li><li>✓ Batch: many PDFs → one file</li><li>✓ Use on 3 devices</li><li>✓ 14-day money-back guarantee</li></ul>
-      <button type="button" data-upgrade class="mt-6 w-full rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white hover:bg-emerald-700">Get Pro</button>
+      <button type="button" data-upgrade class="mt-6 w-full rounded-lg bg-emerald-700 px-4 py-2 font-semibold text-white hover:bg-emerald-800">Get Pro</button>
     </div>
     <div class="rounded-2xl border border-slate-200 bg-white p-6">
       <h3 class="font-semibold">Pro monthly</h3><p class="mt-2 text-3xl font-bold">$9<span class="text-base font-normal text-slate-500">/month</span></p>
@@ -230,7 +230,7 @@ for (const p of pages) {
     : `<section id="converter-section" class="mx-auto mt-8 max-w-5xl px-4" aria-label="Statement converter"><div id="converter"><div class="rounded-2xl border border-slate-200 bg-white p-10 text-center text-slate-500">Loading converter…</div></div></section>`;
   const body = p.body ? `<article class="prose-content mx-auto max-w-3xl px-4 pt-12">${p.body}</article>` : '';
   const cta = p.guide
-    ? `<section class="mx-auto max-w-3xl px-4 pt-12"><div class="rounded-2xl bg-emerald-600 p-6 text-white"><h2 class="text-xl font-bold">Convert a statement without uploading it</h2><p class="mt-1 text-emerald-50">Free, in your browser, verified against the running balance.</p><a href="${link('')}#converter-section" class="mt-4 inline-block rounded-lg bg-white px-4 py-2 font-semibold text-emerald-800">Open the converter</a></div></section>`
+    ? `<section class="mx-auto max-w-3xl px-4 pt-12"><div class="rounded-2xl bg-emerald-700 p-6 text-white"><h2 class="text-xl font-bold">Convert a statement without uploading it</h2><p class="mt-1 text-emerald-50">Free, in your browser, verified against the running balance.</p><a href="${link('')}#converter-section" class="mt-4 inline-block rounded-lg bg-white px-4 py-2 font-semibold text-emerald-800">Open the converter</a></div></section>`
     : '';
   write(
     p.slug,
@@ -290,7 +290,7 @@ simple(
 );
 write(
   '404',
-  layout({ slug: '404', depth: 0, title: `Page not found | ${BRAND}`, description: 'Page not found.', noindex: true, body: `<section class="mx-auto max-w-xl px-4 pt-20 text-center"><h1 class="text-4xl font-extrabold">Page not found</h1><p class="mt-3 text-slate-600">That page doesn’t exist.</p><a class="mt-6 inline-block rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white" href="${link('')}">Go to the converter</a></section>` }),
+  layout({ slug: '404', depth: 0, title: `Page not found | ${BRAND}`, description: 'Page not found.', noindex: true, body: `<section class="mx-auto max-w-xl px-4 pt-20 text-center"><h1 class="text-4xl font-extrabold">Page not found</h1><p class="mt-3 text-slate-600">That page doesn’t exist.</p><a class="mt-6 inline-block rounded-lg bg-emerald-700 px-4 py-2 font-semibold text-white" href="${link('')}">Go to the converter</a></section>` }),
 );
 
 // sitemap + robots

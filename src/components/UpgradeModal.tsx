@@ -107,7 +107,7 @@ function Plans() {
           <div className="text-sm font-medium text-slate-500">{p.title}</div>
           <div className="mt-1 text-2xl font-bold text-slate-900">{p.price}</div>
           <div className="mt-1 text-xs text-emerald-700">{p.note}</div>
-          <div className="mt-3 rounded-lg bg-emerald-600 px-3 py-2 text-sm font-semibold text-white">Buy {p.title.toLowerCase()}</div>
+          <div className="mt-3 rounded-lg bg-emerald-700 px-3 py-2 text-sm font-semibold text-white">Buy {p.title.toLowerCase()}</div>
         </a>
       ))}
       <p className="sm:col-span-2 text-xs text-slate-500">

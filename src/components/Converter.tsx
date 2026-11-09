@@ -303,7 +303,7 @@ export function Converter() {
                     key={f}
                     disabled={!rows.length}
                     onClick={() => void doExport(f)}
-                    className={`rounded-lg px-3 py-2 text-sm font-semibold disabled:opacity-40 ${f === 'csv' ? 'bg-emerald-600 text-white hover:bg-emerald-700' : 'border border-slate-300 text-slate-800 hover:bg-slate-50'}`}
+                    className={`rounded-lg px-3 py-2 text-sm font-semibold disabled:opacity-40 ${f === 'csv' ? 'bg-emerald-700 text-white hover:bg-emerald-800' : 'border border-slate-300 text-slate-800 hover:bg-slate-50'}`}
                   >
                     {{ csv: 'CSV', xlsx: 'Excel', ofx: 'OFX (QuickBooks/Xero)', qif: 'QIF' }[f]}
                     {locked && <span className="ml-1 text-xs font-normal text-slate-500">· Pro</span>}
