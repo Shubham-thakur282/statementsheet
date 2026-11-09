@@ -29,7 +29,7 @@ async function mockLicenseApi(page: Page, meta = { store_id: 111, product_id: 22
 test.describe('landing page', () => {
   test('loads with SEO essentials and no console errors', async ({ page }) => {
     const errors = collectErrors(page);
-    await page.goto('/');
+    await page.goto('./');
     await expect(page).toHaveTitle(/Bank Statement PDF to Excel/);
     await expect(page.getByRole('heading', { level: 1 })).toContainText('without uploading');
     await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /browser/);
@@ -40,14 +40,14 @@ test.describe('landing page', () => {
   });
 
   test('has no horizontal overflow', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     expect(overflow).toBeLessThanOrEqual(0);
   });
 
   test('skip link and file picker are keyboard reachable', async ({ page, isMobile }) => {
     test.skip(isMobile, 'keyboard test on desktop only');
-    await page.goto('/');
+    await page.goto('./');
     await page.keyboard.press('Tab');
     await expect(page.getByRole('link', { name: 'Skip to content' })).toBeFocused();
     const chooser = page.getByRole('button', { name: 'choose a file' });
@@ -59,7 +59,7 @@ test.describe('landing page', () => {
 test.describe('conversion journey (free plan)', () => {
   test('converts a US statement, shows reconciliation, edits a row and downloads CSV', async ({ page }) => {
     const errors = collectErrors(page);
-    await page.goto('/');
+    await page.goto('./');
     await upload(page, 'us-checking.pdf');
     const table = page.getByTestId('results-table');
     await expect(table.locator('tbody tr')).toHaveCount(24);
@@ -83,7 +83,7 @@ test.describe('conversion journey (free plan)', () => {
   });
 
   test('Indian statement: DD/MM detection and date-order toggle', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     await upload(page, 'in-savings.pdf');
     const firstDate = page.getByTestId('results-table').locator('tbody tr').nth(1).getByLabel('Date');
     await expect(firstDate).toHaveValue('2025-04-03');
@@ -92,7 +92,7 @@ test.describe('conversion journey (free plan)', () => {
   });
 
   test('password-protected PDF prompts, rejects wrong password, then converts', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     await upload(page, { name: 'locked.pdf', mimeType: 'application/pdf', buffer: encryptedFixture('in-savings.pdf', '01011990') });
     await expect(page.getByText('is password-protected')).toBeVisible();
     await page.getByLabel(/PDF password/).fill('nope');
@@ -104,7 +104,7 @@ test.describe('conversion journey (free plan)', () => {
   });
 
   test('rejects non-PDF files and explains non-statement PDFs', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     await upload(page, { name: 'notes.txt', mimeType: 'text/plain', buffer: Buffer.from('hello') });
     await expect(page.getByRole('alert')).toContainText('Please choose a PDF');
     await upload(page, { name: 'fake.pdf', mimeType: 'application/pdf', buffer: Buffer.from('<html>not a pdf</html>') });
@@ -114,7 +114,7 @@ test.describe('conversion journey (free plan)', () => {
   });
 
   test('premium formats open the upgrade dialog with checkout links', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     await upload(page, 'uk-signed.pdf');
     await page.getByRole('button', { name: /^Excel/ }).click();
     const dialog = page.getByRole('dialog');
@@ -125,7 +125,7 @@ test.describe('conversion journey (free plan)', () => {
   });
 
   test('daily free limit triggers upgrade on the 4th conversion', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     for (let i = 0; i < 3; i++) {
       await upload(page, 'credit-card.pdf');
       await expect(page.getByTestId('results-table')).toBeVisible();
@@ -137,7 +137,7 @@ test.describe('conversion journey (free plan)', () => {
   });
 
   test('multiple files on free plan prompts for Pro', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     await page.getByTestId('file-input').setInputFiles([fx('us-checking.pdf'), fx('uk-signed.pdf')]);
     await expect(page.getByRole('dialog')).toContainText('several statements at once is part of Pro');
   });
@@ -146,7 +146,7 @@ test.describe('conversion journey (free plan)', () => {
 test.describe('Pro license journey', () => {
   test('invalid key is rejected; valid key unlocks Excel/OFX/batch; license can be removed', async ({ page }) => {
     await mockLicenseApi(page);
-    await page.goto('/');
+    await page.goto('./');
     await page.getByRole('button', { name: 'Go Pro' }).click();
     const dialog = page.getByRole('dialog');
     await dialog.getByLabel('Have a license key?').fill('00000000-0000-0000-0000-000000000000');
@@ -181,14 +181,14 @@ test.describe('Pro license journey', () => {
 
   test('a key from another Lemon Squeezy store is refused', async ({ page }) => {
     await mockLicenseApi(page, { store_id: 999, product_id: 222, customer_email: 'x@example.com' });
-    await page.goto('/pricing/');
+    await page.goto('./pricing/');
     await page.getByLabel('Have a license key?').fill(KEY);
     await page.getByRole('button', { name: 'Activate' }).click();
     await expect(page.getByRole('alert')).toContainText('different product');
   });
 
   test('tampered localStorage cannot fake Pro', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     await page.evaluate(() => localStorage.setItem('ss_license_v1', JSON.stringify({ key: '<img src=x onerror=alert(1)>', status: 'active', validatedAt: Date.now() })));
     await page.reload();
     await expect(page.getByRole('button', { name: 'Go Pro' })).toBeVisible();
@@ -199,7 +199,7 @@ test.describe('content pages', () => {
   test('every internal link resolves (no broken links)', async ({ page, request, isMobile }) => {
     test.skip(isMobile, 'crawl once');
     const seen = new Set<string>();
-    const queue = ['/'];
+    const queue = ['./'];
     while (queue.length) {
       const path = queue.shift()!;
       if (seen.has(path)) continue;
@@ -211,12 +211,12 @@ test.describe('content pages', () => {
       const hrefs = await page.locator('a[href^="/"]').evaluateAll((as) => as.map((a) => (a as HTMLAnchorElement).getAttribute('href')!.split('#')[0]));
       for (const h of hrefs) if (h && !seen.has(h)) queue.push(h);
     }
-    for (const asset of ['/sitemap.xml', '/robots.txt', '/favicon.svg', '/pdfjs/standard_fonts/FoxitSans.pfb']) expect((await request.get(asset)).status(), asset).toBe(200);
+    for (const asset of ['./sitemap.xml', './robots.txt', './favicon.svg', './og.png', './pdfjs/standard_fonts/FoxitSans.pfb']) expect((await request.get(asset)).status(), asset).toBe(200);
     expect(seen.size).toBeGreaterThanOrEqual(14);
   });
 
   test('SEO landing page embeds a working converter', async ({ page }) => {
-    await page.goto('/bank-statement-to-quickbooks/');
+    await page.goto('./bank-statement-to-quickbooks/');
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Import a PDF bank statement into QuickBooks');
     await upload(page, 'in-savings.pdf');
     await expect(page.getByTestId('results-table').locator('tbody tr')).toHaveCount(10);

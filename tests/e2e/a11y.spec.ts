@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-const PAGES = ['/', '/pricing/', '/bank-statement-to-quickbooks/', '/guides/is-it-safe-to-upload-bank-statements-online/', '/privacy/', '/support/'];
+const PAGES = ['./', './pricing/', './bank-statement-to-quickbooks/', './guides/is-it-safe-to-upload-bank-statements-online/', './privacy/', './support/'];
 
 for (const path of PAGES) {
   test(`no serious accessibility violations on ${path}`, async ({ page }) => {
@@ -14,7 +14,7 @@ for (const path of PAGES) {
 }
 
 test('results table and upgrade dialog are accessible', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   await page.getByTestId('file-input').setInputFiles(new URL('../fixtures/us-checking.pdf', import.meta.url).pathname);
   await page.getByTestId('results-table').waitFor();
   let r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
